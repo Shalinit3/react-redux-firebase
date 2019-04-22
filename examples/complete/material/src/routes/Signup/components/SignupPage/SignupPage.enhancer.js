@@ -20,6 +20,10 @@ export default compose(
       firebase
         .login({ provider: 'google', type: 'popup' })
         .catch(err => showError(err.message)),
+    loginWithGitHub: ({ firebase, showError }) => e =>
+      firebase
+        .login({ provider: 'github', type: 'popup' })
+        .catch(err => showError(err.message)),
     emailSignup: ({ firebase, showError }) => creds =>
       firebase
         .createUser(creds, {

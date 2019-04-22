@@ -6,7 +6,13 @@ import Paper from '@material-ui/core/Paper'
 import { LOGIN_PATH } from 'constants/paths'
 import SignupForm from '../SignupForm'
 
-const SignupPage = ({ emailSignup, googleLogin, onSubmitFail, classes }) => (
+const SignupPage = ({
+  emailSignup,
+  googleLogin,
+  loginWithGitHub,
+  onSubmitFail,
+  classes
+}) => (
   <div className={classes.root}>
     <Paper className={classes.panel}>
       <SignupForm onSubmit={emailSignup} onSubmitFail={onSubmitFail} />
@@ -14,6 +20,9 @@ const SignupPage = ({ emailSignup, googleLogin, onSubmitFail, classes }) => (
     <div className={classes.orLabel}>or</div>
     <div className={classes.providers}>
       <GoogleButton onClick={googleLogin} />
+    </div>
+    <div className={classes.providers}>
+      <button onClick={loginWithGitHub}>Login With GitHub</button>
     </div>
     <div className={classes.login}>
       <span className={classes.loginLabel}>Already have an account?</span>
